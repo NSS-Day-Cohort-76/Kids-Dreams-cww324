@@ -10,7 +10,9 @@ export const Celebrities = () => {
                     data-id="${star.id}" 
                     data-type="celebrity"
                     data-sport="${star.sport}"
-                    id="star--${star.id}">
+                    data-name="${star.name}"
+                    id="star--${star.id}"
+                    >
                     ${star.name}
                 </li>`
     }
@@ -18,3 +20,15 @@ export const Celebrities = () => {
     html += "</ol>"
     return html
 }
+
+document.addEventListener("click",
+    (clkEvent) => {
+        const itemClicked = clkEvent.target
+            if (itemClicked.dataset.type === "celebrity"){
+            const celebName = itemClicked.dataset.name
+            const celebSport = itemClicked.dataset.sport
+
+                window.alert(`${celebName} is a ${celebSport} star`)
+            }
+    })
+
