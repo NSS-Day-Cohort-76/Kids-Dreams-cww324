@@ -1,4 +1,4 @@
-const database = {
+export const database = {
     celebrities: [{
         id: 1,
         name: "Alphonse Meron",
@@ -13,7 +13,7 @@ const database = {
         id: 3,
         name: "Anna Bowton",
         email: "abowton2@wisc.edu",
-        spōrt: "Golf"
+        sport: "Golf"
     }, {
         id: 4,
         name: "Hunfredo Drynan",
@@ -102,3 +102,12 @@ const database = {
         wish: "catching a foul ball at a Major League game!"
     }]
 }
+
+
+
+export const getCelebrities = () => {
+    return structuredClone(database.celebrities)
+}
+export const getChildren = () => {
+    return structuredClone(database.children)
+}  
